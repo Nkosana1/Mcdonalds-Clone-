@@ -38,9 +38,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
         <h1>McDonald's</h1>
-        <nav>
+        <nav role="navigation" aria-label="Main navigation">
             <ul>
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">Our Story</a></li>
@@ -51,7 +52,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main-content" role="main">
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="hero-content">
@@ -70,7 +71,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer role="contentinfo">
         <address>
             <strong>McDonald's NYC - Times Square</strong><br>
             1540 Broadway, Times Square, NY 10036
