@@ -675,6 +675,129 @@ footer p:last-child {
 }
 
 /* ========================================
+   Contact Form Styles
+   ======================================== */
+.contact-form {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background-color: rgba(255, 188, 13, 0.05);
+    border-radius: 8px;
+    border: 2px solid var(--primary-yellow);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 1rem;
+}
+
+.required {
+    color: var(--secondary-red);
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'Lato', 'Arial', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-white);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-yellow);
+    box-shadow: 0 0 0 3px rgba(255, 188, 13, 0.1);
+}
+
+.form-group input[type="text"]:invalid:not(:placeholder-shown),
+.form-group input[type="email"]:invalid:not(:placeholder-shown) {
+    border-color: var(--secondary-red);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: 'Lato', 'Arial', sans-serif;
+}
+
+.contact-form .btn-primary {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-message {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    display: none;
+}
+
+.form-message.success {
+    display: block;
+    background-color: #d4edda;
+    color: #155724;
+    border: 2px solid #c3e6cb;
+}
+
+.form-message.error {
+    display: block;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 2px solid var(--secondary-red);
+}
+
+/* Form loading state */
+.contact-form.loading .btn-primary {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.contact-form.loading .btn-primary::after {
+    content: '...';
+    animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60%, 100% { content: '...'; }
+}
+
+/* Tablet and Desktop Form Styles */
+@media (min-width: 768px) {
+    .contact-form {
+        padding: 2rem;
+    }
+
+    .contact-form .btn-primary {
+        width: auto;
+        min-width: 200px;
+    }
+}
+
+/* ========================================
    Large Desktop (Optional enhancement)
    ======================================== */
 @media (min-width: 1440px) {
