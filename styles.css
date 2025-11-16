@@ -159,6 +159,139 @@ article {
 }
 
 /* ========================================
+   Hero Section Styles
+   ======================================== */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, rgba(255, 188, 13, 0.1) 0%, rgba(218, 41, 28, 0.1) 100%);
+    border-radius: 8px;
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-red);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+}
+
+.hero-image {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* ========================================
+   Menu Item Styles
+   ======================================== */
+.menu-item {
+    background-color: var(--bg-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    border-left: none;
+    padding: 0;
+}
+
+.menu-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--primary-yellow);
+}
+
+.menu-item-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.menu-item-content h3 {
+    color: var(--secondary-red);
+    margin-bottom: 0.75rem;
+    font-size: 1.3rem;
+}
+
+.menu-item-content p {
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.menu-item-content .btn-primary {
+    margin-top: auto;
+    width: 100%;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--secondary-red);
+    margin-bottom: 1rem;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    font-weight: normal;
+    margin-right: 0.5rem;
+}
+
+.badge {
+    display: inline-block;
+    background-color: var(--primary-yellow);
+    color: var(--text-dark);
+    font-weight: bold;
+    font-size: 0.85rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ========================================
+   About Page Image Styles
+   ======================================== */
+.about-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border: 3px solid var(--primary-yellow);
+}
+
+/* ========================================
    Menu Items Grid (Mobile First - Single Column)
    ======================================== */
 /* Single column for mobile on Meals and Specials pages */
@@ -388,6 +521,27 @@ footer p:last-child {
         padding: 1.5rem;
     }
 
+    /* Hero section: Side by side layout on tablet */
+    .hero-section {
+        flex-direction: row;
+        align-items: center;
+        padding: 2rem;
+    }
+
+    .hero-content {
+        flex: 1;
+        text-align: left;
+        padding-right: 2rem;
+    }
+
+    .hero-image {
+        flex: 1;
+    }
+
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+
     /* Menu items: 2-column grid for Meals and Specials pages */
     .meals-grid,
     .specials-grid {
@@ -475,6 +629,19 @@ footer p:last-child {
         padding: 0 2rem;
     }
 
+    /* Hero section: Enhanced desktop layout */
+    .hero-section {
+        padding: 3rem;
+    }
+
+    .hero-content h2 {
+        font-size: 3rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
     /* Menu items: 3-column grid for Meals page */
     .meals-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -485,6 +652,11 @@ footer p:last-child {
     .specials-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
+    }
+
+    /* Menu item image height adjustment for desktop */
+    .menu-item img {
+        height: 280px;
     }
 
     /* Article adjustments */
