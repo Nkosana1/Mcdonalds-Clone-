@@ -1,6 +1,7 @@
 /* ========================================
    McDonald's NYC - Times Square
    Visual Design & Styling System
+   Mobile-First Responsive Layout
    ======================================== */
 
 /* ========================================
@@ -17,7 +18,7 @@
 }
 
 /* ========================================
-   Reset & Base Styles
+   Reset & Base Styles (Mobile First)
    ======================================== */
 * {
     margin: 0;
@@ -30,10 +31,13 @@ body {
     color: var(--text-dark);
     background-color: var(--bg-white);
     line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* ========================================
-   Typography
+   Typography (Mobile First)
    ======================================== */
 h1, h2 {
     font-family: 'Montserrat', 'Arial Black', sans-serif;
@@ -42,12 +46,12 @@ h1, h2 {
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 1.75rem;
     margin-bottom: 1rem;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 1.75rem;
     margin-bottom: 1rem;
     margin-top: 1.5rem;
 }
@@ -55,7 +59,7 @@ h2 {
 h3 {
     font-family: 'Montserrat', 'Arial Black', sans-serif;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin-bottom: 0.75rem;
     margin-top: 1rem;
 }
@@ -68,31 +72,40 @@ p, li {
 }
 
 /* ========================================
-   Header Styles
+   Fluid Images
+   ======================================== */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ========================================
+   Header Styles (Mobile First)
    ======================================== */
 header {
     background-color: var(--bg-white);
     border-bottom: 4px solid var(--primary-yellow);
-    padding: 1.5rem 2rem;
+    padding: 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Mobile: Centered logo */
 header h1 {
     color: var(--secondary-red);
     margin-bottom: 1rem;
-    font-size: 2.5rem;
+    font-size: 1.75rem;
     text-align: center;
 }
 
 /* ========================================
-   Navigation Styles
+   Navigation Styles (Mobile First - Vertical Stack)
    ======================================== */
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 nav ul li {
@@ -103,10 +116,12 @@ nav ul li a {
     color: var(--text-dark);
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.1rem;
-    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
     transition: all 0.3s ease;
     border-radius: 4px;
+    display: block;
+    text-align: center;
 }
 
 nav ul li a:hover {
@@ -117,28 +132,41 @@ nav ul li a:hover {
 nav ul li a.active {
     color: var(--secondary-red);
     border-bottom: 2px solid var(--secondary-red);
+    background-color: rgba(218, 41, 28, 0.05);
 }
 
 /* ========================================
-   Main Content Styles
+   Main Content Styles (Mobile First)
    ======================================== */
 main {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 2rem;
+    width: 100%;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
     min-height: 60vh;
+    flex: 1;
 }
 
 section {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 article {
-    margin-bottom: 2rem;
-    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
     background-color: var(--bg-white);
     border-left: 4px solid var(--primary-yellow);
     border-radius: 4px;
+}
+
+/* ========================================
+   Menu Items Grid (Mobile First - Single Column)
+   ======================================== */
+/* Single column for mobile on Meals and Specials pages */
+.meals-grid,
+.specials-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 /* ========================================
@@ -160,6 +188,8 @@ button[type="submit"],
     text-decoration: none;
     display: inline-block;
     font-family: 'Lato', 'Arial', sans-serif;
+    width: 100%;
+    text-align: center;
 }
 
 .btn-primary:hover,
@@ -185,6 +215,8 @@ button[type="submit"]:hover,
     text-decoration: none;
     display: inline-block;
     font-family: 'Lato', 'Arial', sans-serif;
+    width: 100%;
+    text-align: center;
 }
 
 .btn-secondary:hover,
@@ -209,6 +241,8 @@ button[type="submit"]:hover,
     text-decoration: none;
     display: inline-block;
     font-family: 'Lato', 'Arial', sans-serif;
+    width: 100%;
+    text-align: center;
 }
 
 .btn-accent:hover,
@@ -224,8 +258,8 @@ button[type="submit"]:hover,
 footer {
     background-color: var(--footer-dark);
     color: var(--text-light);
-    padding: 2.5rem 2rem;
-    margin-top: 4rem;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
     text-align: center;
 }
 
@@ -237,7 +271,7 @@ footer address {
 
 footer address strong {
     color: var(--primary-yellow);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     display: block;
     margin-bottom: 0.5rem;
 }
@@ -251,7 +285,7 @@ footer .social-media {
     margin: 1.5rem 0;
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1rem;
     flex-wrap: wrap;
 }
 
@@ -262,6 +296,7 @@ footer .social-media a {
     border: 1px solid var(--primary-yellow);
     border-radius: 4px;
     transition: all 0.3s ease;
+    font-size: 0.9rem;
 }
 
 footer .social-media a:hover {
@@ -271,7 +306,7 @@ footer .social-media a:hover {
 
 footer p:last-child {
     margin-top: 1.5rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.7);
 }
 
@@ -291,7 +326,7 @@ footer p:last-child {
 .cta-section {
     background: linear-gradient(135deg, var(--secondary-red) 0%, #b8241a 100%);
     color: var(--text-light);
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 8px;
     text-align: center;
     margin: 2rem 0;
@@ -303,57 +338,175 @@ footer p:last-child {
 }
 
 /* ========================================
-   Responsive Design
+   Tablet Breakpoint (768px)
    ======================================== */
-@media (max-width: 768px) {
-    header {
-        padding: 1rem;
-    }
-
-    header h1 {
-        font-size: 2rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    nav ul li a {
-        display: block;
-        text-align: center;
-    }
-
-    main {
-        padding: 0 1rem;
-    }
-
-    article {
-        padding: 1rem;
-    }
-
+@media (min-width: 768px) {
+    /* Typography adjustments */
     h1 {
         font-size: 2rem;
     }
 
     h2 {
-        font-size: 1.75rem;
+        font-size: 2rem;
     }
-}
 
-@media (max-width: 480px) {
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Header adjustments */
+    header {
+        padding: 1.5rem 2rem;
+    }
+
     header h1 {
-        font-size: 1.75rem;
+        font-size: 2rem;
+    }
+
+    /* Navigation: Change to horizontal row */
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
     }
 
     nav ul li a {
+        display: inline-block;
+        width: auto;
+        padding: 0.5rem 1rem;
         font-size: 1rem;
     }
 
+    /* Main content adjustments */
+    main {
+        padding: 0 2rem;
+        margin: 2rem auto;
+    }
+
+    article {
+        padding: 1.5rem;
+    }
+
+    /* Menu items: 2-column grid for Meals and Specials pages */
+    .meals-grid,
+    .specials-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    /* Heading and intro paragraph span full width */
+    .meals-grid > h2,
+    .specials-grid > h2,
+    .specials-grid > p {
+        grid-column: 1 / -1;
+    }
+
+    /* Buttons: Auto width on tablet */
     .btn-primary,
     .btn-secondary,
-    .btn-accent {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
+    .btn-accent,
+    button[type="submit"],
+    .primary-button,
+    .secondary-button,
+    .accent-button {
+        width: auto;
+        display: inline-block;
+    }
+
+    /* Footer adjustments */
+    footer {
+        padding: 2.5rem 2rem;
+    }
+
+    footer address strong {
+        font-size: 1.2rem;
+    }
+}
+
+/* ========================================
+   Desktop Breakpoint (1024px)
+   ======================================== */
+@media (min-width: 1024px) {
+    /* Typography adjustments */
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Header: Logo on left, navigation on right */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 2rem;
+    }
+
+    header h1 {
+        margin-bottom: 0;
+        text-align: left;
+        font-size: 2.5rem;
+    }
+
+    nav {
+        flex-shrink: 0;
+    }
+
+    nav ul {
+        gap: 1.5rem;
+    }
+
+    nav ul li a {
+        font-size: 1.1rem;
+    }
+
+    /* Main content: Centered with max-width 1200px */
+    main {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 2rem;
+    }
+
+    /* Menu items: 3-column grid for Meals page */
+    .meals-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    /* Specials page: Keep 2 columns on desktop */
+    .specials-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    /* Article adjustments */
+    article {
+        padding: 1.5rem;
+    }
+
+    section {
+        margin-bottom: 3rem;
+    }
+
+    /* Footer adjustments */
+    footer {
+        padding: 2.5rem 2rem;
+    }
+}
+
+/* ========================================
+   Large Desktop (Optional enhancement)
+   ======================================== */
+@media (min-width: 1440px) {
+    main {
+        max-width: 1200px;
     }
 }
