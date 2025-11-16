@@ -1,3 +1,359 @@
-/* McDonald's NYC - Times Square Stylesheet */
-/* Styles will be added in future prompts */
+/* ========================================
+   McDonald's NYC - Times Square
+   Visual Design & Styling System
+   ======================================== */
 
+/* ========================================
+   CSS Variables (Color Palette)
+   ======================================== */
+:root {
+    --primary-yellow: #ffbc0d;
+    --secondary-red: #da291c;
+    --bg-white: #ffffff;
+    --text-dark: #3a3a3a;
+    --accent-blue: #007bff;
+    --footer-dark: #3a3a3a;
+    --text-light: #ffffff;
+}
+
+/* ========================================
+   Reset & Base Styles
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', 'Arial', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-white);
+    line-height: 1.6;
+}
+
+/* ========================================
+   Typography
+   ======================================== */
+h1, h2 {
+    font-family: 'Montserrat', 'Arial Black', sans-serif;
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+
+h3 {
+    font-family: 'Montserrat', 'Arial Black', sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    margin-top: 1rem;
+}
+
+p, li {
+    font-family: 'Lato', 'Arial', sans-serif;
+    color: var(--text-dark);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* ========================================
+   Header Styles
+   ======================================== */
+header {
+    background-color: var(--bg-white);
+    border-bottom: 4px solid var(--primary-yellow);
+    padding: 1.5rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    color: var(--secondary-red);
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+/* ========================================
+   Navigation Styles
+   ======================================== */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-red);
+    background-color: rgba(218, 41, 28, 0.1);
+}
+
+nav ul li a.active {
+    color: var(--secondary-red);
+    border-bottom: 2px solid var(--secondary-red);
+}
+
+/* ========================================
+   Main Content Styles
+   ======================================== */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    min-height: 60vh;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+article {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: var(--bg-white);
+    border-left: 4px solid var(--primary-yellow);
+    border-radius: 4px;
+}
+
+/* ========================================
+   Button Styles
+   ======================================== */
+/* Primary Buttons (Red - for CTAs like "Order Now", "Add to Cart") */
+.btn-primary,
+button[type="submit"],
+.primary-button {
+    background-color: var(--secondary-red);
+    color: var(--text-light);
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Lato', 'Arial', sans-serif;
+}
+
+.btn-primary:hover,
+button[type="submit"]:hover,
+.primary-button:hover {
+    background-color: #b8241a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(218, 41, 28, 0.3);
+}
+
+/* Secondary Buttons (Yellow) */
+.btn-secondary,
+.secondary-button {
+    background-color: var(--primary-yellow);
+    color: var(--text-dark);
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Lato', 'Arial', sans-serif;
+}
+
+.btn-secondary:hover,
+.secondary-button:hover {
+    background-color: #e6a90c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255, 188, 13, 0.3);
+}
+
+/* Accent Buttons (Blue - for secondary actions) */
+.btn-accent,
+.accent-button {
+    background-color: var(--accent-blue);
+    color: var(--text-light);
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Lato', 'Arial', sans-serif;
+}
+
+.btn-accent:hover,
+.accent-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+/* ========================================
+   Footer Styles
+   ======================================== */
+footer {
+    background-color: var(--footer-dark);
+    color: var(--text-light);
+    padding: 2.5rem 2rem;
+    margin-top: 4rem;
+    text-align: center;
+}
+
+footer address {
+    font-style: normal;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+footer address strong {
+    color: var(--primary-yellow);
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+footer p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+footer .social-media {
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+footer .social-media a {
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--primary-yellow);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+footer .social-media a:hover {
+    background-color: var(--primary-yellow);
+    color: var(--text-dark);
+}
+
+footer p:last-child {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ========================================
+   Highlight & CTA Styles
+   ======================================== */
+.highlight-red {
+    color: var(--secondary-red);
+    font-weight: bold;
+}
+
+.highlight-yellow {
+    color: var(--primary-yellow);
+    font-weight: bold;
+}
+
+.cta-section {
+    background: linear-gradient(135deg, var(--secondary-red) 0%, #b8241a 100%);
+    color: var(--text-light);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.cta-section h2,
+.cta-section p {
+    color: var(--text-light);
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    nav ul li a {
+        display: block;
+        text-align: center;
+    }
+
+    main {
+        padding: 0 1rem;
+    }
+
+    article {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.75rem;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-accent {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
